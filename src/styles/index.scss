@@ -1,9 +1,10 @@
-$headerHeight: 42px;
-$leftBoardWidth: 260px;
-$rightBoardWidth: 260px;
+$headerHeight: 48px;
+$leftBoardWidth: 280px;
+$rightBoardWidth: 280px;
 
 .el-main {
   padding: 0px;
+  overflow: hidden;
 }
 
 .el-header {
@@ -13,75 +14,42 @@ $rightBoardWidth: 260px;
 }
 
 .left-board {
-  width: $leftBoardWidth;
+  height: calc(100vh - #{$leftBoardWidth});
+  display: inline;
+  width: 260px;
   position: absolute;
-  left: 0;
-  top: 0;
-}
 
-.left-scrollbar {
-  height: calc(100vh - #{$headerHeight});
-  overflow: hidden;
-}
-
-.center-scrollbar {
-  height: calc(100vh - #{$headerHeight});
-  overflow: hidden;
-  border-left: 1px solid #f1e8e8;
-  border-right: 1px solid #f1e8e8;
-  box-sizing: border-box;
+  .el-scrollbar.el-scrollbar__wrap {
+    height: calc(100vh - #{$headerHeight});
+    overflow: hidden;
+  }
 }
 
 .center-board {
-  width: auto;
-  margin: 0 $rightBoardWidth 0 $leftBoardWidth;
-  box-sizing: border-box;
+  height: calc(100vh - #{$headerHeight});
+  display: inline;
+  left: 0px;
+  right: 0px;
+  margin: 0px $rightBoardWidth 0px $leftBoardWidth;
+  position: absolute;
+  border-left: 1px solid #f1e8e8;
+  border-right: 1px solid #f1e8e8;
+  .el-scrollbar.el-scrollbar__wrap {
+    height: calc(100vh - #{$headerHeight});
+    overflow: hidden;
+  }
 }
 
 .right-board {
-  width: $rightBoardWidth;
+  height: calc(100vh - #{$rightBoardWidth});
+  display: inline;
+  width: 260px;
+  right: 0px;
   position: absolute;
-  right: 0;
-  top: 0;
-  padding-top: 3px;
-  padding-right: 18px;
 
-  .field-box {
-    position: relative;
-    box-sizing: border-box;
+  .el-scrollbar.el-scrollbar__wrap {
+    height: calc(100vh - #{$headerHeight});
     overflow: hidden;
-  }
-
-  .el-scrollbar {
-    height: #{$headerHeight};
-  }
-}
-
-.drawing-board {
-  height: 100%;
-  position: relative;
-
-  .components-body {
-    padding: 0;
-    margin: 0;
-    font-size: 0;
-  }
-
-  .sortable-ghost {
-    position: relative;
-    display: block;
-    overflow: hidden;
-
-    &::before {
-      content: " ";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      height: 3px;
-      background: rgb(89, 89, 223);
-      z-index: 2;
-    }
   }
 }
 
