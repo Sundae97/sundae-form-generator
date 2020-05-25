@@ -13,7 +13,7 @@ module.exports = {
             // '@comp': path.resolve(__dirname, 'src/components'),
             // '@api': path.resolve(__dirname, 'src/api'),
             // '@plug': path.resolve(__dirname, 'src/plugins'),
-            // '@utils': path.resolve(__dirname, 'src/utils')
+            '@utils': path.resolve(__dirname, 'src/utils')
         }
     }
 }

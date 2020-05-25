@@ -1,4 +1,21 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Router from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(Router)
+
+export const constantRoutes = [
+    {
+        path: '/',
+        component: () => import("@/components/HelloWorld")
+    }
+]
+
+const createRouter = () => new Router({
+    // mode: 'history', // require service support
+    scrollBehavior: () => ({ y: 0 }),
+    routes: constantRoutes
+})
+
+const  router = createRouter()
+
+export default router
