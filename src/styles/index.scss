@@ -1,4 +1,4 @@
-$headerHeight: 48px;
+$headerHeight: 60px;
 $leftBoardWidth: 280px;
 $rightBoardWidth: 280px;
 
@@ -8,21 +8,18 @@ $rightBoardWidth: 280px;
 }
 
 .el-header {
-  padding: 8px 12px;
+  height: $headerHeight;
   background-color: #fff;
+  line-height: $headerHeight;
   border: 1px solid #f1e8e8;
 }
 
 .left-board {
-  height: calc(100vh - #{$leftBoardWidth});
+  height: calc(100vh - #{$headerHeight});
   display: inline;
   width: 260px;
   position: absolute;
 
-  .el-scrollbar.el-scrollbar__wrap {
-    height: calc(100vh - #{$headerHeight});
-    overflow: hidden;
-  }
 }
 
 .center-board {
@@ -34,28 +31,26 @@ $rightBoardWidth: 280px;
   position: absolute;
   border-left: 1px solid #f1e8e8;
   border-right: 1px solid #f1e8e8;
-  .el-scrollbar.el-scrollbar__wrap {
-    height: calc(100vh - #{$headerHeight});
-    overflow: hidden;
-  }
 }
 
 .right-board {
-  height: calc(100vh - #{$rightBoardWidth});
+  height: calc(100vh - #{$headerHeight});
   display: inline;
-  width: 260px;
+  width: $rightBoardWidth;
   right: 0px;
   position: absolute;
+}
 
-  .el-scrollbar.el-scrollbar__wrap {
-    height: calc(100vh - #{$headerHeight});
-    overflow: hidden;
+.el-scrollbar {
+  height: 100%;
+  .el-scrollbar__wrap {
+    overflow-x: hidden;
   }
 }
 
+
 .component-item {
   cursor: move;
-  width: 46%;
   height: 32px;
   padding: 6px;
   border-width: 2px;
