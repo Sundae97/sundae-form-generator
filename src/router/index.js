@@ -6,7 +6,7 @@ Vue.use(Router)
 export const constantRoutes = [
     {
         path: '/',
-        component: () => import("@/components/HelloWorld")
+        component: () => import("@/views/Index")
     }
 ]
 

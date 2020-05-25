@@ -1,0 +1,96 @@
+$headerHeight: 42px;
+$leftBoardWidth: 260px;
+$rightBoardWidth: 260px;
+
+.el-main {
+  padding: 0px;
+}
+
+.el-header {
+  padding: 8px 12px;
+  background-color: #fff;
+  border: 1px solid #f1e8e8;
+}
+
+.left-board {
+  width: $leftBoardWidth;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.left-scrollbar {
+  height: calc(100vh - #{$headerHeight});
+  overflow: hidden;
+}
+
+.center-scrollbar {
+  height: calc(100vh - #{$headerHeight});
+  overflow: hidden;
+  border-left: 1px solid #f1e8e8;
+  border-right: 1px solid #f1e8e8;
+  box-sizing: border-box;
+}
+
+.center-board {
+  width: auto;
+  margin: 0 $rightBoardWidth 0 $leftBoardWidth;
+  box-sizing: border-box;
+}
+
+.right-board {
+  width: $rightBoardWidth;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-top: 3px;
+  padding-right: 18px;
+
+  .field-box {
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .el-scrollbar {
+    height: #{$headerHeight};
+  }
+}
+
+.drawing-board {
+  height: 100%;
+  position: relative;
+
+  .components-body {
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+  }
+
+  .sortable-ghost {
+    position: relative;
+    display: block;
+    overflow: hidden;
+
+    &::before {
+      content: " ";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 3px;
+      background: rgb(89, 89, 223);
+      z-index: 2;
+    }
+  }
+}
+
+.component-item {
+  cursor: move;
+  width: 46%;
+  height: 32px;
+  padding: 6px;
+  border-width: 2px;
+  border-color: #cccccc;
+  border-style: dashed;
+}
