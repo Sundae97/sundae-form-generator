@@ -1,11 +1,9 @@
 <template>
-    <div>
-        <el-form style="min-height: 300px;">
-            <draggable :list="formComponents" :animation="340" group="formGroup" :sort="true">
-                <component v-for="(item, index) in formComponents" :key="index" :is="item.tag"></component>
-            </draggable>
-        </el-form>
-    </div>
+    <el-form>
+        <draggable class="components-list" :list="formComponents" :animation="340" group="formGroup" :sort="true">
+            <component v-for="(item, index) in formComponents" :key="index" :is="item.tag"></component>
+        </draggable>
+    </el-form>
 </template>
 
 <script>
@@ -28,6 +26,6 @@
     }
 </script>
 
-<style scoped>
-
+<style lang="scss">
+    @import '~@/styles/index.scss';
 </style>

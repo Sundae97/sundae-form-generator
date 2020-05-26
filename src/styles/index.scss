@@ -47,3 +47,17 @@ $rightBoardWidth: 280px;
     overflow-x: hidden;
   }
 }
+
+.components-list {
+  padding: 8px;
+  box-sizing: border-box;
+  height: calc(100vh - #{$headerHeight});
+  position: relative;
+
+  .components-item {
+    display: inline-block;
+    width: 48%;
+    margin: 1%;
+    transition: transform 0ms !important;
+  }
+}
