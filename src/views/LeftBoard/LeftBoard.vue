@@ -2,6 +2,7 @@
     <el-row>
         <draggable :list="componentsResourceList" group="test" :animation="400" :sort="true">
             <el-col :span="10" class="component-item" v-for="item in componentsResourceList" :key="item.key">
+                <i class="el-icon-apple" />
                 {{item.name}}
             </el-col>
         </draggable>
@@ -10,11 +11,15 @@
 
 <script>
     import draggable from "vuedraggable";
+    import {vComponents} from "@/components/generator/vComponents"
+
+
 
     export default {
         name: "LeftBoard",
         components: {
-            draggable
+            draggable,
+            ...vComponents.map(item => item.component),
         },
         data() {
             return {

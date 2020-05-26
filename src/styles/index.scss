@@ -48,12 +48,13 @@ $rightBoardWidth: 280px;
   }
 }
 
-
 .component-item {
   cursor: move;
   height: 32px;
   padding: 6px;
+  margin: 3px;
   border-width: 2px;
   border-color: #cccccc;
   border-style: dashed;
+  text-align: left;
 }

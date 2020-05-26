@@ -24,7 +24,7 @@
 </template>
 
 <script>
-    import LeftBoard from "@/views/LeftBoard";
+    import LeftBoard from "@/views/LeftBoard/LeftBoard";
 
     export default {
         name: "Index",
