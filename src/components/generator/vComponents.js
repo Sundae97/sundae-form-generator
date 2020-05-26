@@ -8,5 +8,10 @@ export const vComponents = [
         componentName: "输入框",
         tag: "v-el-input",
         component: () => import("@/components/generator/v-el-input"),
+    },
+    {
+        componentName: "开关",
+        tag: "v-el-switch",
+        component: () => import("@/components/generator/v-el-switch"),
     }
 ]

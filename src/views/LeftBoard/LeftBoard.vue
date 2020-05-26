@@ -1,9 +1,12 @@
 <template>
     <el-row>
-        <draggable :list="componentsResourceList" group="test" :animation="400" :sort="true">
-            <el-col :span="10" class="component-item" v-for="item in componentsResourceList" :key="item.key">
-                <i class="el-icon-apple" />
-                {{item.name}}
+        <draggable :list="vComponents"
+                   :group="{ name: 'formGroup', pull: 'clone', put: false }"
+                   :animation="400"
+                   :sort="false">
+            <el-col :span="10" class="component-item" v-for="(item, index) in vComponents" :key="index">
+                <i class="el-icon-apple"/>
+                {{item.componentName}}
             </el-col>
         </draggable>
     </el-row>
@@ -13,23 +16,14 @@
     import draggable from "vuedraggable";
     import {vComponents} from "@/components/generator/vComponents"
 
-
-
     export default {
         name: "LeftBoard",
         components: {
             draggable,
-            ...vComponents.map(item => item.component),
         },
         data() {
             return {
-                componentsResourceList: [
-                    {key: 1, name: "111"},
-                    {key: 2, name: "222"},
-                    {key: 3, name: "333"},
-                    {key: 4, name: "444"},
-                    {key: 5, name: "555"},
-                ],
+                vComponents: vComponents
             };
         }
 
@@ -37,5 +31,14 @@
 </script>
 
 <style scoped>
-
+    .component-item {
+        cursor: move;
+        height: 32px;
+        padding: 6px;
+        margin: 3px;
+        border-width: 2px;
+        border-color: #cccccc;
+        border-style: dashed;
+        text-align: left;
+    }
 </style>
