@@ -1,7 +1,4 @@
-$headerHeight: 60px;
-$leftBoardWidth: 280px;
-$rightBoardWidth: 280px;
-
+@import "~@/styles/constants.scss";
 .el-main {
   padding: 0px;
   overflow: hidden;
@@ -45,19 +42,5 @@ $rightBoardWidth: 280px;
   height: 100%;
   .el-scrollbar__wrap {
     overflow-x: hidden;
-  }
-}
-
-.components-list {
-  padding: 8px;
-  box-sizing: border-box;
-  height: calc(100vh - #{$headerHeight});
-  position: relative;
-
-  .components-item {
-    display: inline-block;
-    width: 48%;
-    margin: 1%;
-    transition: transform 0ms !important;
   }
 }
