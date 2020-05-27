@@ -5,20 +5,26 @@
 </template>
 
 <script>
-    import {vComponents} from "@/components/generator/vComponents"
-
-    const componentList = {};
-    vComponents.forEach(item => componentList[item.config.tag] = item.config.component);
+    // import {vComponents} from "@/components/generator/vComponents"
+    //
+    // const componentList = {};
+    // vComponents.forEach(item => componentList[item.config.tag] = item.config.component);
     export default {
         name: "v-form-item",
         props: {
             value: Object,
         },
         components: {
-            ...componentList
+            itemComponent: this.$props.value.component
+        },
+        beforeCreate() {
+            console.log(this.components.itemComponent);
+            this.itemComponent = this.value.component;
         },
         data() {
-            return {}
+            return {
+                itemComponent: this.value.component
+            }
         }
     }
 </script>
