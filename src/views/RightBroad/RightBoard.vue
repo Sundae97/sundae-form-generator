@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="padding: 8px;">
         <component v-if="selectedItem != null" :is="selectedItem.tag" :options="selectedItem.options"></component>
     </div>
 </template>

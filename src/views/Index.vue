@@ -21,7 +21,9 @@
                 </el-scrollbar>
             </div>
         </el-main>
-        <el-drawer :visible.sync="mainDrawer" size="100%"></el-drawer>
+        <el-drawer :visible.sync="mainDrawer" size="100%">
+            <DrawerBoard />
+        </el-drawer>
     </div>
 </template>
 
@@ -29,10 +31,12 @@
     import LeftBoard from "@/views/LeftBoard/LeftBoard";
     import CenterBoard from "@/views/CenterBoard/CenterBoard";
     import RightBoard from "@/views/RightBroad/RightBoard";
+    import DrawerBoard from "@/views/DrawerBoard/DrawerBoard";
 
     export default {
         name: "Index",
         components: {
+            DrawerBoard,
             LeftBoard,
             CenterBoard,
             RightBoard

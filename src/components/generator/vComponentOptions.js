@@ -3,6 +3,7 @@ export const vComponentOptions = {
         return {
             label: "测试按钮",
             labelWidth: "120px",
+            span: 24,
             text: "点击",
         }
     },
@@ -10,6 +11,7 @@ export const vComponentOptions = {
         return {
             label: "测试输入框",
             labelWidth: "120px",
+            span: 24,
             vModel: ""
         }
     },
@@ -17,6 +19,7 @@ export const vComponentOptions = {
         return {
             label: "测试开关",
             labelWidth: "120px",
+            span: 24,
             vModel: false
         }
     }
