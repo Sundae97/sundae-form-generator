@@ -7,9 +7,10 @@
                    :sort="true">
             <v-el-form-item v-for="(item, index) in formComponents" :key="index"
                             :tag="item.tag"
-                            :component="vComponentsImports[item.tag]"
+                            :component="item.component"
                             :config="item.config"
-                            :options="item.options"/>
+                            :options="item.options"
+                            @click.native="onSelectedItem(item)"/>
         </draggable>
     </el-form>
 </template>
@@ -17,7 +18,6 @@
 <script>
     import draggable from "vuedraggable";
     import VELFormItem from "@/components/generator/v-el-form-item";
-    import {vComponentsImports} from "@/components/generator/vComponentImports"
 
     export default {
         name: "CenterBoard",
@@ -27,11 +27,14 @@
         },
         data() {
             return {
-                vComponentsImports,
                 formComponents: [],
             }
         },
         methods: {
+            onSelectedItem(item){
+                console.log(item);
+                //TODO 显示和切换右侧配置面板
+            }
         }
     }
 </script>

@@ -30,9 +30,10 @@
         },
         methods: {
             onCloneHandler(item){
-                const cloneItem = JSON.parse(JSON.stringify(item))
-                cloneItem["options"] = vComponentOptions[item.tag]();
-                return cloneItem;
+                return {
+                    ...item,
+                    options: vComponentOptions[item.tag]()
+                }
             }
         }
 
