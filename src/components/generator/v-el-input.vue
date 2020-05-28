@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: "v-el-button",
+        name: "v-el-input",
         props: {
             options: Object,
         }

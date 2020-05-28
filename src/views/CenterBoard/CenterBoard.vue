@@ -34,7 +34,7 @@
         methods: {
             onSelectedItem(item){
                 console.log(item);
-                //TODO 显示和切换右侧配置面板
+                this.$store.commit("selectedItem", item);
             }
         }
     }

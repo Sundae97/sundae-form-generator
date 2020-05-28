@@ -1,7 +1,9 @@
 <template>
-    <el-form-item :label="options.label" :label-width="options.labelWidth">
-        <component :is="tag" :options="options" />
-    </el-form-item>
+    <el-col :span="12">
+        <el-form-item :label="options.label" :label-width="options.labelWidth">
+            <component :is="tag" :options="options" />
+        </el-form-item>
+    </el-col>
 </template>
 
 <script>

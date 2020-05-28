@@ -17,6 +17,7 @@
             </div>
             <div class="right-board">
                 <el-scrollbar>
+                    <RightBoard/>
                 </el-scrollbar>
             </div>
         </el-main>
@@ -27,12 +28,14 @@
 <script>
     import LeftBoard from "@/views/LeftBoard/LeftBoard";
     import CenterBoard from "@/views/CenterBoard/CenterBoard";
+    import RightBoard from "@/views/RightBroad/RightBoard";
 
     export default {
         name: "Index",
         components: {
             LeftBoard,
-            CenterBoard
+            CenterBoard,
+            RightBoard
         },
         data() {
             return {

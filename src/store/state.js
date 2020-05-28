@@ -1,5 +1,6 @@
 const state = {
-    name: "test vuex"
+    name: "test vuex",
+    selectedItem: null,
 }
 
 export default state

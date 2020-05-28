@@ -4,7 +4,7 @@
                    :group="{ name: 'formGroup', pull: 'clone', put: false }"
                    :animation="400"
                    :sort="false"
-                    :clone="onCloneHandler">
+                   :clone="onCloneHandler">
             <el-col :span="10" class="component-item" v-for="(item, index) in vComponents" :key="index">
                 <i class="el-icon-apple"/>
                 {{item.componentName}}
@@ -29,7 +29,7 @@
             };
         },
         methods: {
-            onCloneHandler(item){
+            onCloneHandler(item) {
                 return {
                     ...item,
                     options: vComponentOptions[item.tag]()
@@ -40,7 +40,7 @@
     }
 </script>
 
-<style scoped>
+<style>
     .component-item {
         cursor: move;
         height: 32px;
