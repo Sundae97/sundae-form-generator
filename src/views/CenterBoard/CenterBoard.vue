@@ -32,7 +32,7 @@
             }
         },
         methods: {
-            onSelectedItem(item){
+            onSelectedItem(item) {
                 console.log(item);
                 this.$store.commit("selectedItem", item);
             }

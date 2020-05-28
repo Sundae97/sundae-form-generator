@@ -9,10 +9,12 @@
     import {vComponents} from '@/components/generator/vComponents'
 
     const configPanelComponents = {}
-    vComponents.forEach(item => { configPanelComponents[item.tag] = item.configPanelComponent })
+    vComponents.forEach(item => {
+        configPanelComponents[item.tag] = item.configPanelComponent
+    })
     export default {
         name: "RightBoard",
-        components:{
+        components: {
             ...configPanelComponents
         },
         computed: {
