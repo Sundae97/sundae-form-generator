@@ -1,7 +1,7 @@
 <template>
     <div>
         <el-header height="">
-            <span>表单生成器</span>
+            <span>{{ $store.state.name }}</span>
             <el-button @click="mainDrawer=true" style="float:right;margin-top: 8px;">打开Drawer</el-button>
         </el-header>
         <el-main>
