@@ -1,12 +1,13 @@
 <template>
-    <el-form-item>
-        <el-input></el-input>
-    </el-form-item>
+    <el-input v-model="options.vModel"></el-input>
 </template>
 
 <script>
     export default {
-        name: "v-el-button"
+        name: "v-el-button",
+        props: {
+            options: Object,
+        }
     }
 </script>
 

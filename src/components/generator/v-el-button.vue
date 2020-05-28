@@ -1,12 +1,13 @@
 <template>
-    <el-form-item>
-        <el-button></el-button>
-    </el-form-item>
+    <el-button>{{options.text}}</el-button>
 </template>
 
 <script>
     export default {
-        name: "v-el-button"
+        name: "v-el-button",
+        props: {
+            options: Object
+        }
     }
 </script>
 

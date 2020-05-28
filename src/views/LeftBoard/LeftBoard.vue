@@ -3,7 +3,8 @@
         <draggable :list="vComponents"
                    :group="{ name: 'formGroup', pull: 'clone', put: false }"
                    :animation="400"
-                   :sort="false">
+                   :sort="false"
+                    :clone="onCloneHandler">
             <el-col :span="10" class="component-item" v-for="(item, index) in vComponents" :key="index">
                 <i class="el-icon-apple"/>
                 {{item.componentName}}
@@ -15,6 +16,7 @@
 <script>
     import draggable from "vuedraggable";
     import {vComponents} from "@/components/generator/vComponents"
+    import {vComponentOptions} from "@/components/generator/vComponentOptions";
 
     export default {
         name: "LeftBoard",
@@ -23,8 +25,15 @@
         },
         data() {
             return {
-                vComponents: vComponents
+                vComponents
             };
+        },
+        methods: {
+            onCloneHandler(item){
+                const cloneItem = JSON.parse(JSON.stringify(item))
+                cloneItem["options"] = vComponentOptions[item.tag]();
+                return cloneItem;
+            }
         }
 
     }

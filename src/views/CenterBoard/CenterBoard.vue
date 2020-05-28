@@ -1,35 +1,44 @@
 <template>
     <el-form>
-        <draggable class="components-list" :list="formComponents" :animation="340" group="formGroup" :sort="true">
-            <VFormItem v-for="(item, index) in formComponents" :key="index" v-model="item.config"/>
+        <draggable class="components-list"
+                   :list="formComponents"
+                   :animation="340"
+                   group="formGroup"
+                   :sort="true">
+            <v-el-form-item v-for="(item, index) in formComponents" :key="index"
+                            :tag="item.tag"
+                            :component="vComponentsImports[item.tag]"
+                            :config="item.config"
+                            :options="item.options"/>
         </draggable>
     </el-form>
 </template>
 
 <script>
     import draggable from "vuedraggable";
-    import VFormItem from "@/components/formItem/v-form-item";
-    // import {vComponents} from "@/components/generator/vComponents"
-
-    // const componentList = {};
-    // vComponents.forEach(item => componentList[item.config.tag] = item.component);
+    import VELFormItem from "@/components/generator/v-el-form-item";
+    import {vComponentsImports} from "@/components/generator/vComponentImports"
 
     export default {
         name: "CenterBoard",
         components: {
             draggable,
-            VFormItem,
+            "v-el-form-item": VELFormItem,
         },
         data() {
             return {
+                vComponentsImports,
                 formComponents: [],
             }
+        },
+        methods: {
         }
     }
 </script>
 
 <style lang="scss">
     @import "~@/styles/constants.scss";
+
     .components-list {
         padding: 8px;
         box-sizing: border-box;
@@ -37,6 +46,7 @@
         position: relative;
 
         .components-item {
+            cursor: move;
             display: inline-block;
             width: 48%;
             margin: 1%;
