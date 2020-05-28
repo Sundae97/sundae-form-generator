@@ -5,7 +5,8 @@
                    :animation="340"
                    group="formGroup"
                    :sort="true">
-            <v-el-form-item v-for="(item, index) in formComponents" :key="index"
+            <v-el-form-item class="components-item"
+                            v-for="(item, index) in formComponents" :key="index"
                             :tag="item.tag"
                             :component="item.component"
                             :config="item.config"
@@ -50,10 +51,14 @@
 
         .components-item {
             cursor: move;
-            display: inline-block;
-            width: 48%;
-            margin: 1%;
-            transition: transform 0ms !important;
+            padding: 6px;
+            border-width: 2px;
+            border-color: #cccccc;
+            border-style: dashed;
+        }
+
+        .el-form-item {
+            margin-bottom: 6px;
         }
     }
 </style>
