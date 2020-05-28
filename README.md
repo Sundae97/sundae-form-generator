@@ -1,24 +1,24 @@
 # sundae-form-generator
 
-## Project setup
+表单生成器
+
+### TODO
+-[ ] 1.增加栅格布局
+-[ ] 2.增加JSON数据输出
+-[ ] 3.增加模板输出下载
+-[ ] 4.增加模板预览
+-[ ] 5.增加补充所有可能用到的控件
+
+可能增加的功能
+-[ ] 1.增加后端部分，存储json数据
+-[ ] 2.导入JSON进行渲染
+
+### 启动
 ```
-npm install
+npm run dev
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
+### 打包
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
