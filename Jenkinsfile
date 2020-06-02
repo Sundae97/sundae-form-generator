@@ -1,12 +1,7 @@
 pipeline {
-  agent {
-    node {
-      label 'node-proxy'
-    }
-
-  }
+  agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
         sh 'npm run dev'
       }
