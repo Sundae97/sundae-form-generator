@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('error') {
       steps {
+        sh 'cnpm install'
         sh 'npm run dev'
       }
     }
