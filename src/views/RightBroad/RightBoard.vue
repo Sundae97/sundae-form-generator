@@ -1,26 +1,24 @@
 <template>
-    <div style="padding: 8px;">
-        <component v-if="selectedItem != null" :is="selectedItem.tag" :options="selectedItem.options"></component>
-    </div>
+  <div style="padding: 8px;">
+    <component :is="getConfigPanelTagName(selectedItem.tag)" v-if="selectedItem != null" :options="selectedItem.options" />
+  </div>
 </template>
 
 <script>
-    import {mapState} from 'vuex'
-    import {vComponents} from '@/components/generator/vComponents'
+import { mapState } from 'vuex'
+import { getConfigPanelTagName } from '@/utils/common'
 
-    const configPanelComponents = {}
-    vComponents.forEach(item => {
-        configPanelComponents[item.tag] = item.configPanelComponent
-    })
-    export default {
-        name: "RightBoard",
-        components: {
-            ...configPanelComponents
-        },
-        computed: {
-            ...mapState(['selectedItem'])
-        }
-    }
+export default {
+  name: 'RightBoard',
+  components: {
+  },
+  computed: {
+    ...mapState(['selectedItem'])
+  },
+  methods: {
+    getConfigPanelTagName
+  }
+}
 </script>
 
 <style scoped>

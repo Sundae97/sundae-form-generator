@@ -1,17 +1,18 @@
-import Vue from 'vue';
-import App from '@/App.vue';
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import Vue from 'vue'
+import App from '@/App.vue'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 import router from './router'
-import store from "@/store";
+import store from '@/store'
+import GeneratorComponents from '@/components/Generator/index'
 
+Vue.config.productionTip = false
 
-Vue.config.productionTip = false;
-
-Vue.use(ElementUI);
+Vue.use(ElementUI)
+Vue.use(GeneratorComponents)
 
 new Vue({
   render: h => h(App),
   router,
   store
-}).$mount('#app');
+}).$mount('#app')
