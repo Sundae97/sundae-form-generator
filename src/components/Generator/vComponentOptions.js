@@ -15,6 +15,7 @@ export const vComponentOptions = {
       span: 24,
       vModel: '',
       required: false,
+      requiredMessage: '',
       rules: []
     }
   },
