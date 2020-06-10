@@ -1,8 +1,15 @@
 <script>
     import draggable from 'vuedraggable'
+
     const layouts = {
-        colFormItem(h){
-            return `<el-from-item></el-from-item>`
+        colFormItem(h, item) {
+            const formItemComponentTag = item.tag;
+            return (
+                <el-form-item label={item.options.label} required={item.options.required}
+                label-width={item.options.labelWidth}>
+                    <formItemComponentTag></formItemComponentTag>
+                </el-form-item>
+            )
         }
     }
 
@@ -10,8 +17,11 @@
         components: {
             draggable
         },
+        props: {
+          item: Object
+        },
         render(h) {
-            return h
+            return layouts.colFormItem(h, this.item)
         }
     }
 </script>

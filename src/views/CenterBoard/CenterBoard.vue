@@ -13,6 +13,8 @@
         :span="item.options.span"
         @click.native="onSelectedItem(item)"
       >
+<!--        <draggableItem :item="item">-->
+<!--        </draggableItem>-->
         <el-form-item
           class="components-item"
           :label="item.options.label"
@@ -28,11 +30,13 @@
 
 <script>
 import draggable from 'vuedraggable'
+import draggableItem from './DraggableFormItem'
 
 export default {
   name: 'CenterBoard',
   components: {
-    draggable
+    draggable,
+    draggableItem
   },
   data() {
     return {
