@@ -9,10 +9,13 @@ export const vComponentOptions = {
   },
   'v-el-input': () => {
     return {
+      fieldName: '',
       label: '测试输入框',
       labelWidth: '120px',
       span: 24,
-      vModel: ''
+      vModel: '',
+      required: false,
+      rules: []
     }
   },
   'v-el-switch': () => {

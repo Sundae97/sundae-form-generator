@@ -8,7 +8,7 @@ export default {
   props: {
     options: {
       type: Object,
-      default: () => {}
+      default: () => Object()
     }
   }
 }
