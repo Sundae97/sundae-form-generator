@@ -1,6 +1,13 @@
 export const vComponentOptions = {
+  'v-el-form': () => {
+    return {
+      fieldName: 'form',
+      formComponents: [],
+    }
+  },
   'v-el-button': () => {
     return {
+      fieldName: '',
       label: '测试按钮',
       labelWidth: '120px',
       span: 24,
@@ -21,6 +28,7 @@ export const vComponentOptions = {
   },
   'v-el-switch': () => {
     return {
+      fieldName: '',
       label: '测试开关',
       labelWidth: '120px',
       span: 24,

@@ -2,8 +2,8 @@
   <div>
     <el-header height="">
       <span>表单生成器</span>
-      <el-button style="float:right;margin-top: 8px;" @click="openDrawer">查看Json</el-button>
-      <el-button style="float:right;margin-top: 8px;margin-right: 10px;" @click="renderPreviewDrawer=true">界面渲染</el-button>
+      <el-button style="float:right;margin-top: 8px;" @click="openConfigPreviewDrawer">查看Json</el-button>
+      <el-button style="float:right;margin-top: 8px;margin-right: 10px;" @click="openRenderPreviewDrawer">界面渲染</el-button>
     </el-header>
     <el-main>
       <div class="left-board">
@@ -54,12 +54,18 @@ export default {
     }
   },
   methods: {
-    openDrawer() {
+    openConfigPreviewDrawer() {
       this.configPreviewDrawer = true
       this.$nextTick(() => {
-        this.$refs['configReview'].updateConfigEditor(this.$store.state.formConfig)
+        this.$refs['configPreview'].updateConfigEditor(this.$store.state.formConfig)
       })
-    }
+    },
+    openRenderPreviewDrawer(){
+      this.renderPreviewDrawer = true
+      this.$nextTick(() => {
+        this.$refs['renderPreview'].updateConfigEditor(this.$store.state.formConfig)
+      })
+    },
   }
 }
 </script>

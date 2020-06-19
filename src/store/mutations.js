@@ -4,7 +4,7 @@ const mutations = {
   },
   formConfig(state, val) {
     state.formConfig = val
-  }
+  },
 }
 
 export default mutations
