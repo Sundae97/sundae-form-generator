@@ -1,6 +1,10 @@
 <template>
     <div>
+
         <el-row>
+            <el-col :span="24">
+                <el-button @click="runCode" style="float: left;">run</el-button>
+            </el-col>
             <el-col :span="12">
                 <MonacoEditor ref="renderPreviewEditor" v-model="html" language="html" />
             </el-col>
@@ -38,6 +42,8 @@
             },
             iframeLoad(){
                 console.log("iframe load...");
+            },
+            runCode(){
                 const postData = {
                     type: 'refreshFrame',
                     data: {
